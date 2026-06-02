@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(to right, #004080, #0073e6);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 32px;
+        }
+
+        nav {
+            background-color: #222;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 12px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        section {
+            background-color: white;
+            margin: 25px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #004080;
+            margin-bottom: 15px;
+        }
+
+        #welcomeBanner {
+            background: linear-gradient(to right, steelblue, #5dade2);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .highlight {
+            background-color: yellow;
+            color: black;
+            display: inline-block;
+            padding: 8px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td {
+            padding: 15px;
+        }
+
+        .event-img {
+            width: 230px;
+            height: 160px;
+            border: 3px solid #222;
+            border-radius: 12px;
+            transition: 0.4s;
+        }
+
+        .event-img:hover {
+            transform: scale(1.05);
+        }
+
+        form {
+            width: 75%;
+            margin: auto;
+        }
+
+        input,
+        select,
+        textarea,
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            margin-bottom: 18px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #003d80;
+        }
+
+        output,
+        #fee,
+        #count,
+        #location,
+        #videoMsg,
+        #message {
+            font-weight: bold;
+            color: green;
+        }
+
+        video {
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 20px;
+        }
+
+        @media screen and (max-width: 768px) {
+
+            table,
+            tr,
+            td {
+                display: block;
+                width: 100%;
+            }
+
+            .event-img {
+                width: 100%;
+                height: auto;
+            }
+
+            form {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Local Community Event Portal</h1>
+
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#events">Events</a>
+        <a href="#register">Contact</a>
+        <a href="help.html" target="_blank">Help</a>
+    </nav>
+
+    <!-- Main -->
+    <main>
+
+        <!-- Welcome Banner -->
+        <section id="home">
+
+            <div id="welcomeBanner">
+                <h2>Welcome to Community Portal</h2>
+
+                <p class="highlight">
+                    Residents can register for events and activities.
+                </p>
+
+                <p style="margin-top:15px; font-size:18px;">
+                    Today's Offer:
+                    <span style="color:rgb(194, 9, 9); font-weight:bold;">
+                        Free Entry for First 100 Users!
+                    </span>
+                </p>
+            </div>
+
+        </section>
+
+        <!-- Events -->
+        <section id="events">
+            <h2>Community Events</h2>
+
+            <p>
+                Explore upcoming community activities including workshops,
+                cultural programs, awareness campaigns, sports events,
+                and social service activities.
+            </p>
+        </section>
+
+        <!-- Gallery -->
+        <section id="gallery">
+
+            <h2>Event Image Gallery</h2>
+
+            <table border="1">
+
+                <caption style="font-size:22px; margin-bottom:15px; font-weight:bold;">
+                    Community Event Photos
+                </caption>
+
+                <tr>
+
+                    <td>
+                        <img src="https://karnavatiuniversity.edu.in/wp-content/uploads/2025/08/Tree-Plantation-3.webp"
+                            alt="Tree Plantation" title="Tree Plantation Event" class="event-img">
+
+                        <p>Tree Plantation Drive</p>
+                    </td>
+
+                    <td>
+                        <img src="https://www.bookeventz.com/blog/wp-content/uploads/2021/02/FI-1.jpg"
+                            alt="Food Donation" title="Food Donation Camp" class="event-img">
+
+                        <p>Food Donation Camp</p>
+                    </td>
+
+                    <td>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJgvcv9G1nAI03B_MpcVVciX8pxvAAqZQHfw&s"
+                            alt="Sports Day" title="Sports Event" class="event-img">
+
+                        <p>Community Sports Day</p>
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <img src="https://www.beachsoul.co/cdn/shop/articles/BEACH-CLEAN-UP-Beach-Soul-Portable-Beach-Shower-Camping-Shower_7.jpg?v=1723606083"
+                            alt="Beach Cleaning" title="Cleaning Event" class="event-img">
+
+                        <p>Beach Cleaning Activity</p>
+                    </td>
+
+                    <td>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS9oolDYpnUzXt6GmblB6s55MAhpiLyjVJcQ&s"
+                            alt="Cultural Event" title="Cultural Celebration" class="event-img">
+
+                        <p>Cultural Celebration</p>
+                    </td>
+
+                    <td>
+                        <img src="https://jkyog.blob.core.windows.net/jkyogpublic/blogs/thumbnails/Geriatric-Health-Camp-2023-JKYogIndia.webp"
+                            alt="Health Program" title="Health Awareness Program" class="event-img">
+
+                        <p>Health Awareness Program</p>
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </section>
+
+        <!-- Registration Form -->
+        <section id="register">
+
+            <h2>Event Registration Form</h2>
+
+            <form onsubmit="showMessage(); return false;">
+
+                <label>Name:</label>
+                <input type="text" placeholder="Enter your name" required autofocus>
+
+                <label>Email:</label>
+                <input type="email" placeholder="Enter your email" required>
+
+                <label>Event Date:</label>
+                <input type="date" required>
+
+                <label>Event Type:</label>
+
+                <select required>
+                    <option value="">Select Event</option>
+                    <option>Sports</option>
+                    <option>Cultural</option>
+                    <option>Workshop</option>
+                    <option>Awareness Program</option>
+                </select>
+
+                <label>Message:</label>
+
+                <textarea rows="4" placeholder="Enter your message" required></textarea>
+
+                <button type="submit">
+                    Register
+                </button>
+
+                <output id="result"></output>
+
+            </form>
+
+        </section>
+
+        <!-- Feedback -->
+        <section id="feedback">
+
+            <h2>Event Feedback</h2>
+
+            <label>Phone Number:</label>
+
+            <input type="text" id="phone" onblur="validatePhone()" placeholder="Enter 10-digit number">
+
+            <label>Select Event:</label>
+
+            <select onchange="showFee(this.value)">
+                <option value="">Choose Event</option>
+                <option value="500">Workshop</option>
+                <option value="300">Sports</option>
+                <option value="700">Cultural Fest</option>
+            </select>
+
+            <p id="fee"></p>
+
+            <label>Double Click Image to Enlarge:</label>
+            <br><br>
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS9oolDYpnUzXt6GmblB6s55MAhpiLyjVJcQ&s"
+                class="event-img" ondblclick="enlargeImage(this)" alt="Event Image">
+
+            <br><br>
+
+            <label>Feedback:</label>
+
+            <textarea id="feedbackText" rows="5" onkeyup="countCharacters()" placeholder="Enter feedback"></textarea>
+
+            <p id="count">
+                Characters: 0
+            </p>
+
+            <button onclick="submitFeedback()">
+                Submit Feedback
+            </button>
+
+        </section>
+
+        <!-- Video -->
+        <section id="video">
+
+            <h2>Event Promo Video</h2>
+
+            <video width="30%" controls oncanplay="videoReady()" style="display:block; margin:auto;">
+
+                <source
+                    src="C:\Users\madhu\OneDrive\Desktop\Digital_Nuture_5.0_FSE _Upskilling_8006373\Module 1\HTML\pin_741616263683906596_BERLIN S2 Jumpsuit – Coming Soon.mp4">
+
+            </video>
+
+            <p id="videoMsg"></p>
+
+        </section>
+
+        <!-- Preferences -->
+        <section id="preferences">
+
+            <h2>Save User Preferences</h2>
+
+            <label>Select Preferred Event:</label>
+
+            <select id="eventType" onchange="savePreference()">
+
+                <option value="">Choose Event</option>
+                <option value="Sports">Sports</option>
+                <option value="Cultural">Cultural</option>
+                <option value="Workshop">Workshop</option>
+                <option value="Awareness Program">Awareness Program</option>
+
+            </select>
+
+            <button onclick="clearPreferences()">
+                Clear Preferences
+            </button>
+
+            <p id="message"></p>
+
+        </section>
+
+        <!-- Geolocation -->
+        <section id="locationSection">
+
+            <h2> Find Nearby Events</h2>
+
+            <button onclick="findLocation()">
+                Find Nearby Events
+            </button>
+
+            <p id="location"></p>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            © 2026 Local Community Event Portal
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+
+        // Registration Message
+        function showMessage() {
+
+            document.getElementById("result").innerHTML =
+                "Registration Successful!";
+        }
+
+        // Phone Validation
+        function validatePhone() {
+
+            let phone =
+                document.getElementById("phone").value;
+
+            if (phone.length != 10 || isNaN(phone)) {
+
+                alert("Invalid Phone Number");
+            }
+
+            else {
+
+                alert("Valid Phone Number");
+            }
+        }
+
+        // Show Event Fee
+        function showFee(value) {
+
+            document.getElementById("fee").innerHTML =
+                "Event Fee: ₹" + value;
+        }
+
+        // Submit Feedback
+        function submitFeedback() {
+
+            alert("Feedback Submitted Successfully!");
+        }
+
+        // Enlarge Image
+        function enlargeImage(img) {
+
+            img.style.width = "350px";
+            img.style.height = "250px";
+        }
+
+        // Character Counter
+        function countCharacters() {
+
+            let text =
+                document.getElementById("feedbackText").value;
+
+            document.getElementById("count").innerHTML =
+                "Characters: " + text.length;
+        }
+
+        // Video Ready
+        function videoReady() {
+
+            document.getElementById("videoMsg").innerHTML =
+                "Video ready to play";
+        }
+
+        // Warning Before Leaving
+        window.onbeforeunload = function () {
+
+            return "Form is not submitted.";
+        };
+
+        // Load Preference
+        window.onload = function () {
+
+            let savedEvent =
+                localStorage.getItem("preferredEvent");
+
+            if (savedEvent) {
+
+                document.getElementById("eventType").value =
+                    savedEvent;
+
+                document.getElementById("message").innerHTML =
+                    "Previously selected event loaded!";
+            }
+        };
+
+        // Save Preference
+        function savePreference() {
+
+            let selectedEvent =
+                document.getElementById("eventType").value;
+
+            localStorage.setItem(
+                "preferredEvent",
+                selectedEvent
+            );
+
+            document.getElementById("message").innerHTML =
+                "Preference Saved Successfully!";
+        }
+
+        // Clear Preferences
+        function clearPreferences() {
+
+            localStorage.clear();
+            sessionStorage.clear();
+
+            document.getElementById("eventType").value = "";
+
+            document.getElementById("message").innerHTML =
+                "Preferences Cleared!";
+        }
+
+        // Geolocation
+        function findLocation() {
+
+            if (navigator.geolocation) {
+
+                navigator.geolocation.getCurrentPosition(
+
+                    showPosition,
+                    showError,
+
+                    {
+                        enableHighAccuracy: true,
+                        timeout: 5000,
+                        maximumAge: 0
+                    }
+                );
+            }
+
+            else {
+
+                document.getElementById("location").innerHTML =
+                    "Geolocation not supported.";
+            }
+        }
+
+        // Show Position
+        function showPosition(position) {
+
+            let latitude =
+                position.coords.latitude;
+
+            let longitude =
+                position.coords.longitude;
+
+            document.getElementById("location").innerHTML =
+                "Latitude: " + latitude +
+                "<br>Longitude: " + longitude;
+        }
+
+        // Error Handling
+        function showError(error) {
+
+            switch (error.code) {
+
+                case error.PERMISSION_DENIED:
+
+                    document.getElementById("location").innerHTML =
+                        "Permission Denied";
+                    break;
+
+                case error.TIMEOUT:
+
+                    document.getElementById("location").innerHTML =
+                        "Request Timed Out";
+                    break;
+
+                case error.POSITION_UNAVAILABLE:
+
+                    document.getElementById("location").innerHTML =
+                        "Location Unavailable";
+                    break;
+
+                default:
+
+                    document.getElementById("location").innerHTML =
+                        "Unknown Error";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

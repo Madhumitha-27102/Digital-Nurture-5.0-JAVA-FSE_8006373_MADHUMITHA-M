@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap 5 Exercises — Complete Demo</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Optional: Small demo styles to help visualize blocks -->
+  <style>
+    .demo-box {
+      background: #f8f9fa;
+      border: 1px dashed #dee2e6;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .demo-col {
+      background: #e9ecef;
+      border: 1px solid #ced4da;
+      padding: 1rem;
+    }
+
+    .fixed-footer {
+      z-index: 1030;
+    }
+
+    .img-badge-wrap {
+      position: relative;
+      display: inline-block;
+    }
+
+    .badge-overlay {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+    }
+
+    .media-img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+    }
+
+    body {
+      padding-bottom: 70px;
+    }
+  </style>
+
+  <!-- Exercise 1.2 (Alternative): Use local Bootstrap files instead of CDN
+  Place downloaded Bootstrap files under ./assets/bootstrap/ (css/ and js/)
+  Then comment out the CDN links above and uncomment below:
+
+  <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  -->
+</head>
+
+<body class="bg-light">
+
+  <!-- Exercise 10.1: Responsive Navbar with logo, links, search -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <i class="bi bi-lightning-charge me-2"></i>
+        <span>BS5 Demo</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="mainNav" class="collapse navbar-collapse">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#grid">Grid</a></li>
+          <li class="nav-item"><a class="nav-link" href="#typography">Typography</a></li>
+          <li class="nav-item"><a class="nav-link" href="#forms">Forms</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cards">Cards</a></li>
+          <li class="nav-item"><a class="nav-link" href="#plugins">Plugins</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sass">Sass</a></li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search">
+          <button class="btn btn-outline-light" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-4">
+
+    <!-- Exercise 2.1: Bootstrap directory structure explanation -->
+    <section id="structure" class="mb-5">
+      <h2 class="h4">2. Bootstrap Structure and Files</h2>
+      <div class="alert alert-info">
+        <strong>Downloaded Bootstrap directory (typical):</strong>
+        <ul class="mb-0">
+          <li><strong>css/</strong> — Compiled styles (bootstrap.css, bootstrap.min.css, maps). Include this in the
+            head.</li>
+          <li><strong>js/</strong> — Compiled scripts (bootstrap.bundle.min.js includes Popper). Include before closing
+            body.</li>
+          <li><strong>icons/</strong> or separate <em>Bootstrap Icons</em> package — SVG/font icons to use with
+            <code>bi</code> classes.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3. Fundamentals of Responsive Grid Layout -->
+    <section id="grid" class="mb-5">
+      <h2 class="h4">3–5. Responsive Grid, Alignment, Reordering</h2>
+
+      <!-- Exercise 3.1 & 3.2: 1-col on mobile, 2-col on tablet, 3-col on desktop -->
+      <h3 class="h5">Exercise 3.1–3.2</h3>
+      <div class="container-fluid p-0">
+        <div class="row g-3">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="demo-col">Col A</div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="demo-col">Col B</div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="demo-col">Col C</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exercise 4.1: Sidebar/content -->
+      <h3 class="h5 mt-4">Exercise 4.1</h3>
+      <div class="row g-3">
+        <aside class="col-12 col-md-3">
+          <div class="demo-col">Sidebar (col-md-3)</div>
+        </aside>
+        <section class="col-12 col-md-9">
+          <div class="demo-col">Content area (col-md-9)</div>
+        </section>
+      </div>
+
+      <!-- Exercise 4.2: Four equal columns on small and up -->
+      <h3 class="h5 mt-4">Exercise 4.2</h3>
+      <div class="row g-3">
+        <div class="col-12 col-sm-3">
+          <div class="demo-col">1</div>
+        </div>
+        <div class="col-12 col-sm-3">
+          <div class="demo-col">2</div>
+        </div>
+        <div class="col-12 col-sm-3">
+          <div class="demo-col">3</div>
+        </div>
+        <div class="col-12 col-sm-3">
+          <div class="demo-col">4</div>
+        </div>
+      </div>
+
+      <!-- Exercise 5.1: Centering content inside a row -->
+      <h3 class="h5 mt-4">Exercise 5.1</h3>
+      <div class="row justify-content-center align-items-center" style="min-height:120px;">
+        <div class="col-6 col-md-4">
+          <div class="demo-col">Centered col</div>
+        </div>
+      </div>
+
+      <!-- Exercise 5.2: Reorder columns on md and up -->
+      <h3 class="h5 mt-4">Exercise 5.2</h3>
+      <div class="row g-3">
+        <div class="col-12 col-md-6 order-md-2">
+          <div class="demo-col">Second on md+ (order-md-2)</div>
+        </div>
+        <div class="col-12 col-md-6 order-md-1">
+          <div class="demo-col">First on md+ (order-md-1)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Responsive Flexbox Utilities -->
+    <section id="flex" class="mb-5">
+      <h2 class="h4">6. Responsive Flex Utilities</h2>
+
+      <!-- Exercise 6.1 (labeled as 7.1 in prompt): Navbar-like flex bar -->
+      <h3 class="h5">Exercise 6.1</h3>
+      <div
+        class="d-flex flex-column flex-md-row gap-2 align-items-start align-items-md-center p-3 bg-white border rounded">
+        <div class="fw-bold">Brand</div>
+        <div class="ms-md-auto d-flex gap-2">
+          <a class="btn btn-sm btn-outline-secondary" href="#">Link A</a>
+          <a class="btn btn-sm btn-outline-secondary" href="#">Link B</a>
+        </div>
+      </div>
+
+      <!-- Exercise 6.2: justify-content-between & align-items-center in card -->
+      <h3 class="h5 mt-3">Exercise 6.2</h3>
+      <div class="card">
+        <div class="card-body d-flex justify-content-between align-items-center">
+          <div>
+            <h5 class="card-title mb-1">Card Title</h5>
+            <p class="card-text text-muted mb-0">Aligned content</p>
+          </div>
+          <button class="btn btn-primary btn-sm">Action</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Typography -->
+    <section id="typography" class="mb-5">
+      <h2 class="h4">7. Typography</h2>
+      <!-- Exercise 7.1 -->
+      <div class="mb-3">
+        <div class="display-1">Display 1</div>
+        <p class="lead mb-1">This is lead text for emphasis.</p>
+        <p class="text-muted mb-1">Muted text tone.</p>
+        <p class="fw-bold mb-0">Bold text using fw-bold.</p>
+      </div>
+      <!-- Exercise 7.2 -->
+      <div>
+        <p class="text-uppercase mb-1">uppercase text</p>
+        <p class="text-lowercase mb-1">LOWERCASE TEXT</p>
+        <p class="text-capitalize mb-0">capitalize these words</p>
+      </div>
+    </section>
+
+    <!-- 8. Forms -->
+    <section id="forms" class="mb-5">
+      <h2 class="h4">8. Forms</h2>
+
+      <!-- Exercise 8.1: Registration form -->
+      <h3 class="h5">Exercise 8.1</h3>
+      <form class="bg-white p-3 border rounded mb-4">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">First name</label>
+            <input type="text" class="form-control" placeholder="Jane">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Last name</label>
+            <input type="text" class="form-control" placeholder="Doe">
+          </div>
+          <div class="col-12">
+            <label class="form-label">Email</label>
+            <div class="input-group">
+              <span class="input-group-text">@</span>
+              <input type="email" class="form-control" placeholder="jane@example.com">
+            </div>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" placeholder="••••••••">
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="termsCheck">
+              <label class="form-check-label" for="termsCheck">I agree to the terms</label>
+            </div>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">Register</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Exercise 8.2: Login form with form-floating -->
+      <h3 class="h5">Exercise 8.2</h3>
+      <form class="bg-white p-3 border rounded">
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com">
+          <label for="loginEmail">Email address</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="loginPass" placeholder="Password">
+          <label for="loginPass">Password</label>
+        </div>
+        <button class="btn btn-success w-100" type="submit">Login</button>
+      </form>
+    </section>
+
+    <!-- 9. Buttons -->
+    <section id="buttons" class="mb-5">
+      <h2 class="h4">9. Buttons</h2>
+      <!-- Exercise 9.1: contextual buttons -->
+      <div class="mb-3 d-flex flex-wrap gap-2">
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-secondary">Secondary</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-danger">Danger</button>
+        <button class="btn btn-warning">Warning</button>
+        <button class="btn btn-info">Info</button>
+        <button class="btn btn-light">Light</button>
+        <button class="btn btn-dark">Dark</button>
+        <button class="btn btn-link">Link</button>
+      </div>
+      <div class="mb-3 d-flex flex-wrap gap-2">
+        <button class="btn btn-outline-primary">Outline Primary</button>
+        <button class="btn btn-outline-secondary">Outline Secondary</button>
+        <button class="btn btn-outline-success">Outline Success</button>
+        <button class="btn btn-outline-danger">Outline Danger</button>
+        <button class="btn btn-outline-warning">Outline Warning</button>
+        <button class="btn btn-outline-info">Outline Info</button>
+        <button class="btn btn-outline-dark">Outline Dark</button>
+      </div>
+
+      <!-- Exercise 9.2: button group and toggle buttons -->
+      <div class="btn-group me-3" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-primary">Left</button>
+        <button type="button" class="btn btn-primary">Middle</button>
+        <button type="button" class="btn btn-primary">Right</button>
+      </div>
+
+      <div class="btn-group" role="group" aria-label="Toggle checkboxes">
+        <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btncheck1">Toggle 1</label>
+
+        <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btncheck2">Toggle 2</label>
+
+        <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btncheck3">Toggle 3</label>
+      </div>
+    </section>
+
+    <!-- 10. Navs and Tabs -->
+    <section id="navs" class="mb-5">
+      <h2 class="h4">10. Navs and Navigation</h2>
+
+      <!-- Exercise 10.2: nav-tabs/nav-pills -->
+      <ul class="nav nav-tabs mb-3" id="demoTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-pane" type="button"
+            role="tab">Home</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-pane" type="button"
+            role="tab">Profile</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-pane" type="button"
+            role="tab">Contact</button>
+        </li>
+      </ul>
+      <div class="tab-content border border-top-0 p-3 bg-white rounded-bottom">
+        <div class="tab-pane fade show active" id="home-pane" role="tabpanel">
+          <p>Home tab content.</p>
+        </div>
+        <div class="tab-pane fade" id="profile-pane" role="tabpanel">
+          <p>Profile tab content.</p>
+        </div>
+        <div class="tab-pane fade" id="contact-pane" role="tabpanel">
+          <p>Contact tab content.</p>
+        </div>
+      </div>
+
+      <ul class="nav nav-pills gap-2">
+        <li class="nav-item"><a class="nav-link active" href="#">Pill 1</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Pill 2</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Pill 3</a></li>
+      </ul>
+    </section>
+
+    <!-- 11. Cards and "Media Object" -->
+    <section id="cards" class="mb-5">
+      <h2 class="h4">11. Cards and Media</h2>
+
+      <!-- Exercise 11.1: Profile card -->
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="card">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600" class="card-img-top" alt="Nature Image">
+            <div class="card-body">
+              <h5 class="card-title">Jane Doe</h5>
+              <p class="card-text">Full-stack developer with a passion for clean UI.</p>
+              <a href="#" class="btn btn-primary"><i class="bi bi-person-add me-1"></i>Follow</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 11.2: Media object layout (using utilities) -->
+        <div class="col-md-6">
+          <div class="p-3 bg-white border rounded d-flex align-items-start gap-3">
+            <img class="media-img rounded" src="https://picsum.photos/seed/media/120/120" alt="Thumb">
+            <div>
+              <h5 class="mb-1">Media Heading</h5>
+              <p class="mb-2 text-muted">Image aligned left of content using flex utilities.</p>
+              <button class="btn btn-sm btn-outline-secondary">Read more</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. Spacing Utilities -->
+    <section id="spacing" class="mb-5">
+      <h2 class="h4">12. Spacing Utilities</h2>
+      <!-- Exercise 12.1 -->
+      <div class="demo-box m-3 mt-4 p-2 py-5">Applied m-3, mt-4, p-2, py-5</div>
+
+      <!-- Exercise 12.2: Pricing section -->
+      <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+        <div class="col">
+          <div class="card h-100 text-center p-3">
+            <h5 class="mt-2">Basic</h5>
+            <p class="display-6 my-3">$9</p>
+            <ul class="list-unstyled mb-4">
+              <li class="mb-2">1 project</li>
+              <li class="mb-2">Email support</li>
+              <li class="mb-2">Community access</li>
+            </ul>
+            <button class="btn btn-outline-primary px-4 py-2">Choose</button>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 text-center p-4">
+            <h5 class="mt-2">Pro</h5>
+            <p class="display-6 my-3">$29</p>
+            <ul class="list-unstyled mb-4">
+              <li class="mb-2">5 projects</li>
+              <li class="mb-2">Priority support</li>
+              <li class="mb-2">Advanced features</li>
+            </ul>
+            <button class="btn btn-primary px-4 py-2">Choose</button>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 text-center p-3">
+            <h5 class="mt-2">Enterprise</h5>
+            <p class="display-6 my-3">$99</p>
+            <ul class="list-unstyled mb-4">
+              <li class="mb-2">Unlimited projects</li>
+              <li class="mb-2">Dedicated support</li>
+              <li class="mb-2">SSO & security</li>
+            </ul>
+            <button class="btn btn-outline-dark px-4 py-2">Contact us</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. Colors and Backgrounds -->
+    <section id="colors" class="mb-5">
+      <h2 class="h4">13. Colors and Backgrounds</h2>
+      <!-- Exercise 13.1 -->
+      <div class="row g-3">
+        <div class="col-md-3">
+          <div class="p-3 text-white bg-primary rounded">bg-primary</div>
+        </div>
+        <div class="col-md-3">
+          <div class="p-3 text-dark bg-warning rounded">bg-warning</div>
+        </div>
+        <div class="col-md-3">
+          <div class="p-3 text-white bg-success rounded">bg-success</div>
+        </div>
+        <div class="col-md-3">
+          <div class="p-3 text-white bg-danger rounded">bg-danger</div>
+        </div>
+      </div>
+      <!-- Exercise 13.2 -->
+      <div class="mt-3 p-4 text-white bg-dark bg-gradient rounded">
+        bg-dark with bg-gradient and white text
+      </div>
+    </section>
+
+    <!-- 14. Display and Visibility -->
+    <section id="visibility" class="mb-5">
+      <h2 class="h4">14. Display and Visibility</h2>
+      <!-- Exercise 14.1 -->
+      <div class="p-3 border rounded mb-3">
+        <div class="d-none d-md-block">Visible on md and up (d-none d-md-block)</div>
+        <div class="d-lg-flex">Flex on lg and up (d-lg-flex)</div>
+      </div>
+      <!-- Exercise 14.2: Responsive sidebar only on tablets and above -->
+      <div class="row">
+        <aside class="col-md-3 d-none d-md-block">
+          <div class="demo-col">Sidebar (hidden on xs-sm)</div>
+        </aside>
+        <section class="col-12 col-md-9">
+          <div class="demo-col">Main content</div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 15. Borders, Shadows, Rounded -->
+    <section id="borders" class="mb-5">
+      <h2 class="h4">15. Borders, Shadows, Rounded</h2>
+      <!-- Exercise 15.1 -->
+      <div class="d-flex align-items-center gap-3">
+        <img src="https://picsum.photos/seed/rounded/100/100" class="border border-primary border-3 rounded-circle"
+          alt="Rounded">
+        <span>Image with border, border-primary, border-3, rounded-circle</span>
+      </div>
+      <!-- Exercise 15.2 -->
+      <div class="card mt-3 shadow shadow-lg rounded-pill">
+        <div class="card-body text-center">
+          Card with shadow-lg and rounded-pill
+        </div>
+      </div>
+    </section>
+
+    <!-- 16. Positioning Utilities -->
+    <section id="positioning" class="mb-5">
+      <h2 class="h4">16. Positioning Utilities</h2>
+      <!-- Exercise 16.2: relative/absolute badge over image -->
+      <div class="img-badge-wrap mb-3">
+        <img src="https://picsum.photos/seed/overlay/400/240" class="rounded" alt="Overlay">
+        <span class="badge bg-danger badge-overlay">New</span>
+      </div>
+      <p class="text-muted">Badge over image using position-relative and position-absolute.</p>
+    </section>
+
+    <!-- 17. Icons with Bootstrap Icons -->
+    <section id="icons" class="mb-5">
+      <h2 class="h4">17. Bootstrap Icons</h2>
+      <!-- Exercise 17.1: social icons in footer area (preview here) -->
+      <div class="d-flex gap-3 fs-4">
+        <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      </div>
+      <!-- Exercise 17.2: icon-only buttons -->
+      <div class="mt-3 d-flex gap-2">
+        <button class="btn btn-outline-secondary" aria-label="Play"><i class="bi bi-play-fill"></i></button>
+        <button class="btn btn-outline-secondary" aria-label="Pause"><i class="bi bi-pause-fill"></i></button>
+        <button class="btn btn-outline-secondary" aria-label="Stop"><i class="bi bi-stop-fill"></i></button>
+      </div>
+    </section>
+
+    <!-- 18. Bootstrap JS Plugins -->
+    <section id="plugins" class="mb-5">
+      <h2 class="h4">18. Bootstrap JS Plugins</h2>
+
+      <!-- Exercise 18.1: Modal -->
+      <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#demoModal">
+        Open Modal
+      </button>
+      <div class="modal fade" id="demoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Demo Modal</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              This is a Bootstrap modal triggered by a button.
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exercise 18.2: Accordion -->
+      <div class="accordion mt-4" id="demoAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="accHeadingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accOne">
+              Accordion Item #1
+            </button>
+          </h2>
+          <div id="accOne" class="accordion-collapse collapse show" data-bs-parent="#demoAccordion">
+            <div class="accordion-body">Content for item one.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="accHeadingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accTwo">
+              Accordion Item #2
+            </button>
+          </h2>
+          <div id="accTwo" class="accordion-collapse collapse" data-bs-parent="#demoAccordion">
+            <div class="accordion-body">Content for item two.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 19. Sass Customization (instructions + preview block) -->
+    <section id="sass" class="mb-5">
+      <h2 class="h4">19. Customization with Sass</h2>
+      <ol class="mb-3">
+        <li>Initialize project: <code>npm init -y</code></li>
+        <li>Install Bootstrap source and Sass: <code>npm i bootstrap sass</code></li>
+        <li>Create <code>src/_variables.scss</code> and set overrides (see below).</li>
+        <li>Create <code>src/styles.scss</code> that imports variables, then Bootstrap.</li>
+        <li>Build CSS: <code>npx sass src/styles.scss public/styles.css</code> (or add an npm script).</li>
+        <li>Link <code>public/styles.css</code> in your HTML instead of the CDN.</li>
+      </ol>
+
+      <div class="alert alert-secondary">
+        <strong>Example _variables.scss:</strong>
+        <pre class="mb-2"><code>// Exercise 19.2: Customize primary and border radius
+$primary: #6f42c1; // purple
+$border-radius: .75rem;
+</code></pre>
+        <strong>Example styles.scss:</strong>
+        <pre class="mb-0"><code>@use "variables"; // if you name it _variables.scss in same folder
+@import "../node_modules/bootstrap/scss/bootstrap";</code></pre>
+      </div>
+
+      <div class="p-3 bg-white border rounded">
+        <p class="mb-2">Preview of customized theme (simulated):</p>
+        <button class="btn btn-primary me-2">Primary Button</button>
+        <div class="card d-inline-block" style="width:14rem;">
+          <div class="card-body">
+            <h6 class="card-title">Rounded Card</h6>
+            <p class="card-text">Border radius overridden via Sass variable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Exercise 16.1: Fixed footer using position-fixed bottom-0 -->
+  <footer class="bg-dark text-white py-2 px-3 position-fixed bottom-0 start-0 end-0 fixed-footer">
+    <div class="container d-flex justify-content-between align-items-center">
+      <small>&copy; 2026 BS5 Demo</small>
+      <!-- Exercise 17.1 social icons in footer -->
+      <div class="d-flex gap-3 fs-5">
+        <a class="text-white-50" href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+        <a class="text-white-50" href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        <a class="text-white-50" href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+  <!-- Exercise 1.2 (Alternative): Local Bootstrap bundle
+  <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  -->
+</body>
+
+</html>

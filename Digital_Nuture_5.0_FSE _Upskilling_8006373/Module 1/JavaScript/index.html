@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Event Portal</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header id="mainHeader">
+        <h1>Community Event Portal</h1>
+        <p>Discover, Participate and Connect with Your Community</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul class="navMenu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Banner -->
+    <section class="banner">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac" alt="Community Events">
+
+        <div class="banner-text">
+            <h2>Building Stronger Communities Together</h2>
+            <p>Join exciting events happening near you</p>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about">
+        <h2>About Our Community</h2>
+
+        <p>
+            Our Community Event Portal helps residents discover local events,
+            connect with people, and participate in social, cultural, and
+            educational activities.
+        </p>
+    </section>
+
+    <!-- Featured Events -->
+    <section>
+
+        <h2>Featured Events</h2>
+
+        <div class="eventGrid">
+
+            <div class="eventCard">
+
+                <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063" alt="Music Festival">
+
+                <h3>Music Festival</h3>
+
+                <p>
+                    Enjoy live music performances and cultural celebrations.
+                </p>
+
+            </div>
+
+            <div class="eventCard">
+
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1" alt="Food Carnival">
+
+                <h3>Food Carnival</h3>
+
+                <p>
+                    Explore cuisines and delicious food from around the world.
+                </p>
+
+            </div>
+
+            <div class="eventCard">
+
+                <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b" alt="Sports Meet">
+
+                <h3>Sports Meet</h3>
+
+                <p>
+                    Participate in exciting sports competitions and activities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Schedule -->
+    <section>
+
+        <h2>Event Schedule</h2>
+
+        <table>
+
+            <tr>
+                <th>Event</th>
+                <th>Date</th>
+                <th>Venue</th>
+            </tr>
+
+            <tr>
+                <td>Music Festival</td>
+                <td>15 June 2026</td>
+                <td>City Park</td>
+            </tr>
+
+            <tr>
+                <td>Food Carnival</td>
+                <td>20 June 2026</td>
+                <td>Town Hall</td>
+            </tr>
+
+            <tr>
+                <td>Sports Meet</td>
+                <td>25 June 2026</td>
+                <td>Sports Stadium</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+    <!-- News -->
+    <section>
+
+        <h2>Community News</h2>
+
+        <div class="news">
+
+            Community programs are improving local infrastructure and creating
+            opportunities for residents. Citizens are encouraged to participate
+            in awareness campaigns, sports programs, environmental initiatives,
+            and social welfare activities.
+
+        </div>
+
+    </section>
+
+    <!-- Registration -->
+    <section>
+
+        <h2>Register for an Event</h2>
+
+        <form id="registrationForm">
+
+            <input type="text" name="userName" placeholder="Enter Name" required>
+
+            <span id="nameError"></span>
+
+            <input type="email" name="email" placeholder="Enter Email" required>
+
+            <span id="emailError"></span>
+
+            <select name="eventName" required>
+
+                <option value="">
+                    Select Event
+                </option>
+
+                <option value="Music Festival">
+                    Music Festival
+                </option>
+
+                <option value="Food Carnival">
+                    Food Carnival
+                </option>
+
+                <option value="Sports Meet">
+                    Sports Meet
+                </option>
+
+            </select>
+
+            <span id="eventError"></span>
+
+            <button clas ="button" type="submit">
+                Register
+            </button>
+
+        </form>
+
+        <div id="successMessage"></div>
+
+    </section>
+
+    <!-- Search -->
+    <section>
+
+        <h2>Search & Filter Events</h2>
+
+        <div class="filterSection">
+
+            <select id="categoryFilter" onchange="filterEvents()">
+
+                <option value="All">
+                    All Categories
+                </option>
+
+                <option value="Music">
+                    Music
+                </option>
+
+                <option value="Food">
+                    Food
+                </option>
+
+                <option value="Sports">
+                    Sports
+                </option>
+
+            </select>
+
+            <input type="text" id="searchBox" placeholder="Search Event" onkeyup="searchEvent()">
+
+        </div>
+
+    </section>
+
+    <!-- Loading -->
+    <div id="loading">
+        Loading Events...
+    </div>
+
+    <!-- Dynamic Events -->
+    <section>
+
+        <h2>Available Events</h2>
+
+        <div id="eventContainer"></div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+        <h3>Community Event Portal</h3>
+
+        <p>
+            © 2026 Community Event Portal | All Rights Reserved
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
